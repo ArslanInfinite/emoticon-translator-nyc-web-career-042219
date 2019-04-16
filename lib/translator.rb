@@ -1,6 +1,4 @@
-require 'pry'
-require 'yml'
-
+require_relative "../lib/emoticons.yml"
 
 def load_library(file_path)
   library = yml.load_file(file_path)
