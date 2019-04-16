@@ -1,14 +1,14 @@
 require "yaml"
 
 def load_library(file_path)
-  lib = YAML.load_file(file_path) 
-  translator = { "get_meaning" => {}, "get_emoticon" => {} } 
-  lib.each do |meaning, emoticon_array| 
+  lib = YAML.load_file(file_path)
+  translator = { "get_meaning" => {}, "get_emoticon" => {} }
+  lib.each do |meaning, emoticon_array|
     emoticon_array.each_with_index do |emoticon, index|
       if index == 1
-        translator["get_meaning"][emoticon] = meaning 
+        translator["get_meaning"][emoticon] = meaning
       elsif index == 0
-        translator["get_emoticon"] [emoticon] = emoticon_array[1] 
+        translator["get_emoticon"] [emoticon] = emoticon_array[1]
       end
     end
   end
